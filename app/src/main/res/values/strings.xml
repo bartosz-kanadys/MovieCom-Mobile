@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MovieCom Mobile</string>
+    <string name="search_hint">Test…</string>
+    <string name="clear_hint">Clear search</string>
+    <string name="searched_movies">Searched Movies</string>
+    <string name="favorites">Favorites</string>
 </resources>
