@@ -4,4 +4,6 @@
     <string name="clear_hint">Clear search</string>
     <string name="searched_movies">Searched Movies</string>
     <string name="favorites">Favorites</string>
+    <string name="not_found">No movies matching your search found :(</string>
+    <string name="favorites_not_found">You haven\'t favorites movies yet</string>
 </resources>
