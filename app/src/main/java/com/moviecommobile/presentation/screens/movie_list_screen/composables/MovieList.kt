@@ -31,6 +31,7 @@ fun MovieList(
         verticalArrangement = Arrangement.spacedBy(12.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
+            .padding(horizontal = 12.dp)
     ) {
         items(
             items = movies,
