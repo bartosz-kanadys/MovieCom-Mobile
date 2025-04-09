@@ -160,6 +160,7 @@ fun MovieListItem(
 @Composable
 fun MovieListItemPreview(){
     val movie = Movie(
+        id="ddd",
         title = "Movie",
         year = 2024,
         genres = listOf("Action", "Drama"),

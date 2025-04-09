@@ -3,7 +3,7 @@ package com.moviecommobile.domain
 import java.time.LocalDate
 
 data class Movie(
-    var id: String? = null,
+    var id: String,
     var plot: String?,
     var genres: List<String>?,
     var runtime: Int? = null,
