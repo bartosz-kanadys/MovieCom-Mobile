@@ -33,7 +33,7 @@ Aplikacja komunikuje się z backendem za pomocą REST API dostarczanego przez ap
 
 ## Repozytoria powiązane
 - 💻 Backend:  [MovieCom-API](https://github.com/bartosz-kanadys/MovieCom-API)  
-- 🌐 Frontend webowy:  [MovieCom-API](https://github.com/bartosz-kanadys/MovieCom-Client)
+- 🌐 Frontend webowy:  [MovieCom-Client](https://github.com/bartosz-kanadys/MovieCom-Client)
 - 📱 Aplikacja mobilna: **MovieCom-Mobile** (to repozytorium)  
 
 ---
