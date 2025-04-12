@@ -170,7 +170,7 @@ private fun MovieListScreen(
                     Box(
                         modifier = Modifier
                             .fillMaxSize(),
-                        contentAlignment = Alignment.Center
+                        contentAlignment = Alignment.TopCenter
                     ){
                         when (pageIndex) {
                             0 -> {
@@ -183,7 +183,9 @@ private fun MovieListScreen(
                                                 text = state.errorMessage.asString(),
                                                 textAlign = TextAlign.Center,
                                                 style = MaterialTheme.typography.titleLarge,
-                                                color = MaterialTheme.colorScheme.primary
+                                                color = MaterialTheme.colorScheme.primary,
+                                                modifier = Modifier
+                                                    .padding(vertical = 100.dp)
                                             )
                                         }
                                         state.searchResult.isEmpty() -> {
@@ -191,7 +193,9 @@ private fun MovieListScreen(
                                                 text = stringResource(R.string.not_found),
                                                 textAlign = TextAlign.Center,
                                                 style = MaterialTheme.typography.titleLarge,
-                                                color = MaterialTheme.colorScheme.primary
+                                                color = MaterialTheme.colorScheme.primary,
+                                                modifier = Modifier
+                                                    .padding(vertical = 100.dp)
                                             )
                                         }
                                         else -> {
@@ -214,7 +218,9 @@ private fun MovieListScreen(
                                         text = stringResource(R.string.favorites_not_found),
                                         textAlign = TextAlign.Center,
                                         style = MaterialTheme.typography.titleLarge,
-                                        color = MaterialTheme.colorScheme.primary
+                                        color = MaterialTheme.colorScheme.primary,
+                                        modifier = Modifier
+                                            .padding(vertical = 100.dp)
                                     )
                                 } else {
                                     MovieList(
