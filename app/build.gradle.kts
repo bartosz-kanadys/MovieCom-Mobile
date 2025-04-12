@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    kotlin("plugin.serialization") version "2.1.20"
 }
 
 android {
@@ -48,6 +49,16 @@ dependencies {
     implementation(libs.material3)
     implementation("io.coil-kt.coil3:coil-compose:3.1.0")
     implementation("io.coil-kt.coil3:coil-network-okhttp:3.1.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0")
+
+//    KTOR
+    implementation("io.ktor:ktor-client-serialization:3.1.2")
+    implementation("io.ktor:ktor-client-core:3.1.2")
+    implementation ("io.ktor:ktor-client-logging-jvm:3.1.1")
+    implementation("io.ktor:ktor-client-content-negotiation:3.1.1")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:3.1.1")
+    implementation("io.ktor:ktor-client-okhttp:3.1.2")
+
 
 
     implementation(libs.androidx.core.ktx)
