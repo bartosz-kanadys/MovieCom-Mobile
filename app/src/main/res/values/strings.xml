@@ -6,4 +6,12 @@
     <string name="favorites">Favorites</string>
     <string name="not_found">No movies matching your search found :(</string>
     <string name="favorites_not_found">You haven\'t favorites movies yet</string>
+    <string name="error_disk_full">Your disk is full</string>
+    <string name="error_uknown_local">Unknown error occurred with local data</string>
+    <string name="error_unknown_remote">Unknown error occurred with remote data</string>
+    <string name="error_request_timeout">Request timeout has been exceeded</string>
+    <string name="error_too_many_requests">To many requests error</string>
+    <string name="error_no_internet">You don\'t have access to the internet</string>
+    <string name="error_server">server error occurred</string>
+    <string name="error_serialization">An error occurred during data serialization</string>
 </resources>
