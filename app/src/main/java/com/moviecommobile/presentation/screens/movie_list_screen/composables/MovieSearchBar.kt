@@ -52,7 +52,6 @@ fun MovieSearchBar(
             placeholder = {
                 Text(
                     text = stringResource(id = R.string.search_hint),
-                    style = AppTypography.displayMedium,
                     color = MaterialTheme.colorScheme.onSurface
                 )
             },
