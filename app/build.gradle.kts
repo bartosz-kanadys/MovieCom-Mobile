@@ -41,11 +41,18 @@ android {
 }
 
 dependencies {
+ val koin_version = "4.0.4"
+    //KOIN
+    implementation("io.insert-koin:koin-core:$koin_version")
+    implementation("io.insert-koin:koin-android:$koin_version")
+    implementation("io.insert-koin:koin-androidx-navigation:$koin_version")
+    implementation("io.insert-koin:koin-compose:$koin_version")
+    implementation("io.insert-koin:koin-compose-viewmodel:$koin_version")
+    implementation("io.insert-koin:koin-compose-viewmodel-navigation:$koin_version")
+
+
 
     implementation("androidx.compose.ui:ui-text-google-fonts:1.7.8")
-    implementation(libs.koin.compose)
-    implementation(libs.koin.compose.viewmodel)
-    implementation(libs.koin.compose.viewmodel.navigation)
     implementation(libs.material3)
     implementation("io.coil-kt.coil3:coil-compose:3.1.0")
     implementation("io.coil-kt.coil3:coil-network-okhttp:3.1.0")
