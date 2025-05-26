@@ -1,10 +1,10 @@
 package com.moviecommobile.presentation.screens.movie_list_screen.composables
 
-import android.util.Log
 import com.moviecommobile.R
 import androidx.compose.runtime.*
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -51,7 +51,9 @@ fun MovieListItem(
 ) {
     Surface(
         shape = RoundedCornerShape(25.dp),
-        color = MaterialTheme.colorScheme.primaryContainer
+        color = MaterialTheme.colorScheme.primaryContainer,
+        modifier = modifier
+            .clickable(onClick = onClick)
     ) {
         Row(
             modifier = Modifier

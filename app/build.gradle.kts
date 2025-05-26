@@ -67,6 +67,8 @@ dependencies {
     implementation("io.ktor:ktor-client-okhttp:3.1.2")
 
 
+    implementation(libs.navigation.compose)
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

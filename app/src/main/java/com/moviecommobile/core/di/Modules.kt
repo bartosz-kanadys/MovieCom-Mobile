@@ -1,10 +1,11 @@
-package com.moviecommobile.domain.di
+package com.moviecommobile.core.di
 
 import com.moviecommobile.data.network.HttpClientFactory
 import com.moviecommobile.data.network.KtorRemoteMovieSource
 import com.moviecommobile.data.network.RemoteMovieDataSource
 import com.moviecommobile.data.repository.DefaultMovieRepository
 import com.moviecommobile.domain.MovieRepository
+import com.moviecommobile.presentation.screens.SelectedMovieViewModel
 import com.moviecommobile.presentation.screens.movie_list_screen.MovieListViewModel
 import io.ktor.client.engine.okhttp.OkHttp
 import org.koin.core.module.dsl.singleOf
@@ -18,4 +19,5 @@ val appModule = module {
     singleOf(::DefaultMovieRepository).bind<MovieRepository>()
 
     viewModelOf(::MovieListViewModel)
+    viewModelOf(::SelectedMovieViewModel)
 }
