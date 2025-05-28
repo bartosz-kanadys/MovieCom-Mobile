@@ -14,4 +14,14 @@
     <string name="error_no_internet">You don\'t have access to the internet</string>
     <string name="error_server">server error occurred</string>
     <string name="error_serialization">An error occurred during data serialization</string>
+    <string name="movie_poster">Movie poster</string>
+    <string name="rating">Rating</string>
+    <string name="pages">Pages</string>
+    <string name="languages">Languages</string>
+    <string name="runtime">Runtime</string>
+    <string name="writers">Writers</string>
+    <string name="genres">Genres</string>
+    <string name="plot">Plot</string>
+    <string name="not_plot">This movie has no plot</string>
+
 </resources>

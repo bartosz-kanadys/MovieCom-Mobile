@@ -1,13 +1,9 @@
 package com.moviecommobile.core.app
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -19,9 +15,13 @@ import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
 import com.example.compose.AppTheme
 import com.moviecommobile.presentation.screens.SelectedMovieViewModel
+import com.moviecommobile.presentation.screens.movie_detials_screen.MovieDetailsAction
+import com.moviecommobile.presentation.screens.movie_detials_screen.MovieDetailsScreenRoot
+import com.moviecommobile.presentation.screens.movie_detials_screen.MovieDetailsViewModel
 import com.moviecommobile.presentation.screens.movie_list_screen.MovieListScreenRoot
 import com.moviecommobile.presentation.screens.movie_list_screen.MovieListViewModel
 import org.koin.compose.viewmodel.koinViewModel
+
 
 @Composable
 @Preview
@@ -54,14 +54,22 @@ fun App() {
                 }
                 composable<Route.DetailScreen> {
                     val sharedViewModel = it.sharedKoinViewModel<SelectedMovieViewModel>(navController)
-                    val selectedMovie = sharedViewModel.selectedMovie.collectAsStateWithLifecycle()
+                    val viewModel = koinViewModel<MovieDetailsViewModel>()
+                    val selectedMovie by sharedViewModel.selectedMovie.collectAsStateWithLifecycle()
 
-                    Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text("Movie details for id: $selectedMovie")
+                    LaunchedEffect(selectedMovie) {
+                        selectedMovie?.let {
+                            viewModel.onAction(MovieDetailsAction.OnSelectedMovieChange(it))
+
+                        }
                     }
+
+                    MovieDetailsScreenRoot(
+                        viewModel = viewModel,
+                        onBackClick = {
+                            navController.navigateUp()
+                        }
+                    )
                 }
             }
         }
