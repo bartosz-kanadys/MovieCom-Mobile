@@ -12,7 +12,7 @@ data class SearchedMovieDto(
     @SerialName("cast") val cast: List<String> = mutableListOf(),
     @SerialName("poster") val poster: String?,
     @SerialName("title") val title: String,
-    @SerialName("fullPlot") val fullPlot: String = "",
+    @SerialName("fullplot") val fullPlot: String,
     @SerialName("languages") val languages: List<String> = mutableListOf(),
     @SerialName("released") val released: String?,
     @SerialName("directors") val directors: List<String> = mutableListOf(),

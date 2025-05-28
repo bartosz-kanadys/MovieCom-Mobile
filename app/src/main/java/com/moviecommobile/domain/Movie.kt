@@ -10,7 +10,7 @@ data class Movie(
     var cast: List<String> = mutableListOf(),
     var poster: String?,
     var title: String,
-    var fullPlot: String = "",
+    var fullPlot: String?,
     var languages: List<String> = mutableListOf(),
     var released: LocalDate?,
     var directors: List<String> = mutableListOf(),
