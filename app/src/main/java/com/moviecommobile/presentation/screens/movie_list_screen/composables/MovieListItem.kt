@@ -169,7 +169,8 @@ fun MovieListItemPreview(){
         plot = "This is a movie plot",
         poster = "https://m.media-amazon.com/images/M/MV5BMjNlMThmNzItMTZlMS00YzJkLTk1MzktYzIyMzllOGFmZmRlXkEyXkFqcGdeQXVyMzE0MjY5ODA@._V1_SY1000_SX677_AL_.jpg",
         released = null,
-        imdb = Movie.Imdb(8.8)
+        imdb = Movie.Imdb(8.8),
+        fullPlot = ""
     )
     AppTheme {
         MovieListItem(movie, {})
