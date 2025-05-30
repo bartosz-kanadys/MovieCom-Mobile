@@ -1,5 +1,6 @@
 package com.moviecommobile.domain
 
+import kotlinx.serialization.Serializable
 import java.time.LocalDate
 
 data class Movie(
@@ -19,6 +20,7 @@ data class Movie(
     var imdb: Imdb? = null,
     var countries: List<String> = mutableListOf(),
 ) {
+    @Serializable
     data class Imdb(
         var rating: Double? = 0.0,
         var votes: Int? = 0,

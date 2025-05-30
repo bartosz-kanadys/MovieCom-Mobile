@@ -1,5 +1,6 @@
 package com.moviecommobile.data.mappers
 
+import com.moviecommobile.data.database.MovieEntity
 import com.moviecommobile.data.dto.SearchedMovieDto
 import com.moviecommobile.domain.Movie
 import java.time.LocalDate
@@ -23,6 +24,56 @@ fun SearchedMovieDto.toMovie(): Movie {
                 null
             }
         },
+        directors = directors,
+        writers = writers,
+        year = year,
+        imdb = imdb?.let {
+            Movie.Imdb(
+                rating = it.rating,
+                votes = it.votes,
+            )
+        },
+        countries = countries
+    )
+}
+
+fun Movie.toMovieEntity(): MovieEntity {
+    return MovieEntity(
+        id = id,
+        plot = plot,
+        genres = genres,
+        runtime = runtime,
+        cast = cast,
+        poster = poster,
+        title = title,
+        fullPlot = fullPlot,
+        languages = languages,
+        released = released,
+        directors = directors,
+        writers = writers,
+        year = year,
+        imdb = imdb?.let {
+            Movie.Imdb(
+                rating = it.rating,
+                votes = it.votes,
+            )
+        },
+        countries = countries
+    )
+}
+
+fun MovieEntity.toMovie(): Movie {
+    return Movie(
+        id = id,
+        plot = plot,
+        genres = genres,
+        runtime = runtime,
+        cast = cast,
+        poster = poster,
+        title = title,
+        fullPlot = fullPlot,
+        languages = languages,
+        released = released,
         directors = directors,
         writers = writers,
         year = year,

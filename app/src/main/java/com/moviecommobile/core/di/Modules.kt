@@ -1,5 +1,8 @@
 package com.moviecommobile.core.di
 
+import com.moviecommobile.data.database.DatabaseFactory
+import com.moviecommobile.data.database.FavoriteMovieDao
+import com.moviecommobile.data.database.FavoriteMovieDatabase
 import com.moviecommobile.data.network.HttpClientFactory
 import com.moviecommobile.data.network.KtorRemoteMovieSource
 import com.moviecommobile.data.network.RemoteMovieDataSource
@@ -15,10 +18,19 @@ import org.koin.dsl.bind
 import org.koin.dsl.module
 
 val appModule = module {
+    // Network setup
     single { HttpClientFactory.create(OkHttp.create()) }
     singleOf(::KtorRemoteMovieSource).bind<RemoteMovieDataSource>()
+
+
+    // Database setup
+    single { DatabaseFactory(get()).create() }
+    single<FavoriteMovieDao> { get<FavoriteMovieDatabase>().movieDao() }
+
+    // Repository
     singleOf(::DefaultMovieRepository).bind<MovieRepository>()
 
+    // ViewModels
     viewModelOf(::MovieListViewModel)
     viewModelOf(::MovieDetailsViewModel)
     viewModelOf(::SelectedMovieViewModel)

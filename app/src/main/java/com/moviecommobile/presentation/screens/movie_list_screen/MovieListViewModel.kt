@@ -30,6 +30,7 @@ class MovieListViewModel(
 
     private var cachedMovies = emptyList<Movie>()
     private var searchJob: Job? = null
+    private var observedFavoriteJob: Job? = null
 
     private val _state = MutableStateFlow(MovieListState())
     val state = _state
@@ -37,6 +38,7 @@ class MovieListViewModel(
             if (cachedMovies.isEmpty()) {
                 observeSearchQuery()
             }
+            observedFavoriteMovies()
         }
         .stateIn( // przechowuje stan w viewModel
             viewModelScope, // Gdzie flow „żyje”. Jeśli ViewModel znika — flow też.
@@ -62,6 +64,19 @@ class MovieListViewModel(
             }
         }
     }
+
+    private fun observedFavoriteMovies() {
+        observedFavoriteJob?.cancel()
+        observedFavoriteJob = movieRepository
+            .getFavoriteMovies()
+            .onEach { favoriteMovies ->
+                _state.update { it.copy(
+                    favoriteMovies = favoriteMovies
+                ) }
+            }
+            .launchIn(viewModelScope)
+    }
+
     // live search with debounce
     private fun observeSearchQuery() {
         state

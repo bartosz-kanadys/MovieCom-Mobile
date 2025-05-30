@@ -3,6 +3,10 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     kotlin("plugin.serialization") version "2.1.20"
+    id ("kotlin-kapt")
+
+
+
 }
 
 android {
@@ -45,11 +49,10 @@ dependencies {
     //KOIN
     implementation("io.insert-koin:koin-core:$koin_version")
     implementation("io.insert-koin:koin-android:$koin_version")
-    implementation("io.insert-koin:koin-androidx-navigation:$koin_version")
+//    implementation("io.insert-koin:koin-androidx-navigation:$koin_version")
     implementation("io.insert-koin:koin-compose:$koin_version")
     implementation("io.insert-koin:koin-compose-viewmodel:$koin_version")
     implementation("io.insert-koin:koin-compose-viewmodel-navigation:$koin_version")
-
 
 
     implementation("androidx.compose.ui:ui-text-google-fonts:1.7.8")
@@ -68,6 +71,11 @@ dependencies {
 
 
     implementation(libs.navigation.compose)
+
+    implementation("androidx.room:room-runtime:2.7.1")
+    implementation ("androidx.room:room-ktx:2.7.1")
+    kapt("androidx.room:room-compiler:2.7.1")
+
 
 
     implementation(libs.androidx.core.ktx)
