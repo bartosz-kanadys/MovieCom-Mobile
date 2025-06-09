@@ -9,9 +9,9 @@ Aplikacja komunikuje się z backendem za pomocą REST API dostarczanego przez ap
 
 ## Funkcjonalności
 - 📽️ **Przeglądanie filmów** – lista dostępnych filmów z możliwością podglądu szczegółów.  
-- 🔍 **Wyszukiwanie** – filtrowanie i wyszukiwanie filmów na podstawie tytułu.  
+- 🔍 **Wyszukiwanie** – filtrowanie i wyszukiwanie filmów na podstawie tytułu.
+- ⭐ **Ulubione filmy** – możliwość dodawania filmów do ulubionych oraz zapisywania ich lokalnie w bazie danych **Room**. 
 - 💬 **Komentarze** – użytkownicy mogą dodawać i usuwać komentarze do filmów. (in progress)
-- ⭐ **Ulubione filmy** – możliwość dodawania filmów do ulubionych oraz zapisywania ich lokalnie w bazie danych **Room**. (in progress)
 - 🔐 **Autoryzacja** – logowanie oraz rejestracja użytkowników.  (in progress)
 - 👥 **Obsługa ról użytkowników** – dostęp do niektórych funkcji zależny od roli (np. użytkownik, administrator).  (in progress)
 
@@ -25,7 +25,7 @@ Aplikacja komunikuje się z backendem za pomocą REST API dostarczanego przez ap
 - **Baza danych lokalna**: Room – wykorzystywana do zapisu ulubionych filmów  
 - **Sieć**: Ktor + Kotlinx Serialization  
 - **Zarządzanie stanem**: StateFlow 
-- **Autoryzacja**: JWT  
+- **Autoryzacja**: JWT (in progress)
 - **Dependency Injection**: Koin
 - **Backend**: Komunikacja z REST API aplikacji MovieCom (Spring Boot + MongoDB)  
 
@@ -37,7 +37,14 @@ Aplikacja komunikuje się z backendem za pomocą REST API dostarczanego przez ap
 - 📱 Aplikacja mobilna: **MovieCom-Mobile** (to repozytorium)  
 
 ---
+## Prezentacja aplikacji
+[![Screenshot-20250531-144634.png](https://i.postimg.cc/FFYk1hXj/Screenshot-20250531-144634.png)](https://postimg.cc/nMthPbzz)
+[![Screenshot-20250531-144717.png](https://i.postimg.cc/mrZt4sS1/Screenshot-20250531-144717.png)](https://postimg.cc/pm72Q34P)
+[![Screenshot-20250531-144728.png](https://i.postimg.cc/Lsyh6byC/Screenshot-20250531-144728.png)](https://postimg.cc/R3HvgXxK)
+
+---
 
 ## Autorzy
 - 👨‍💻 Bartosz Kanadys
+- Aplikacja powstała jako realizacja kursu tworzenia aplikacji mobilnych na system Android, jej pomysłodawca oraz twórcą kursu jest [philipplackner](https://github.com/philipplackner)
 
